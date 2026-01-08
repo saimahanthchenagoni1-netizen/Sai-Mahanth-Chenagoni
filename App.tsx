@@ -19,7 +19,7 @@ import {
   ChevronLeft,
   LayoutGrid
 } from 'lucide-react';
-import { PROJECTS, SKILLS, INTERESTS, TIMELINE } from './constants';
+import { PROJECTS, SKILLS, INTERESTS, TIMELINE, GITHUB_URL } from './constants';
 import { ProjectCard } from './components/ProjectCard';
 import { SkillBadge } from './components/SkillBadge';
 import { AIAssistant } from './components/AIAssistant';
@@ -54,7 +54,6 @@ const App: React.FC = () => {
 
   const openSecretWindow = () => {
     setIsSecretOpen(true);
-    // Smooth scroll to top when opening secret window to reset focus
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -114,7 +113,14 @@ const App: React.FC = () => {
               <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
               <a href="#timeline" className="hover:text-blue-500 transition-colors">Timeline</a>
               <a href="#projects" className="hover:text-blue-500 transition-colors">Projects</a>
-              <a href="#skills" className="hover:text-blue-500 transition-colors">Skills</a>
+              <a 
+                href={GITHUB_URL} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-blue-500 transition-colors flex items-center gap-1"
+              >
+                <Github className="w-3 h-3" /> GitHub
+              </a>
               <button 
                 onClick={toggleTheme}
                 className="p-3 bg-white/5 rounded-full hover:scale-110 active:scale-95 transition-all text-blue-500 border border-white/10"
@@ -136,7 +142,6 @@ const App: React.FC = () => {
         <section className="relative min-h-screen flex flex-col items-center justify-center px-8 z-10 pt-20 overflow-hidden">
           <div className="text-center max-w-5xl mx-auto space-y-8 flex flex-col items-center relative">
             
-            {/* 3D Character - The Interactive Gatekeeper */}
             <div className="mb-10 hover:cursor-crosshair group">
               <MouseFace 
                 isHero={true} 
@@ -163,7 +168,7 @@ const App: React.FC = () => {
               <a href="#timeline" className="w-full sm:w-auto bg-blue-700 text-white px-12 py-5 rounded-[2rem] font-black text-xl hover:bg-blue-600 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-4 shadow-2xl shadow-blue-900/40">
                 Discovery <ArrowRight className="w-6 h-6" />
               </a>
-              <a href="#projects" className="w-full sm:w-auto liquid-glass px-12 py-5 rounded-[2rem] font-black text-xl hover:bg-white hover:text-slate-950 transition-all flex items-center justify-center gap-4 border-white/20">
+              <a href={GITHUB_URL} target="_blank" className="w-full sm:w-auto liquid-glass px-12 py-5 rounded-[2rem] font-black text-xl hover:bg-white hover:text-slate-950 transition-all flex items-center justify-center gap-4 border-white/20">
                 Showcase
               </a>
             </div>
@@ -293,7 +298,7 @@ const App: React.FC = () => {
               </div>
               
               <div className="flex justify-center gap-8">
-                <a href="#" className="p-7 liquid-glass rounded-[2rem] hover:text-blue-500 hover:scale-110 active:scale-95 transition-all shadow-xl"><Github className="w-8 h-8" /></a>
+                <a href={GITHUB_URL} target="_blank" className="p-7 liquid-glass rounded-[2rem] hover:text-blue-500 hover:scale-110 active:scale-95 transition-all shadow-xl"><Github className="w-8 h-8" /></a>
                 <a href="#" className="p-7 liquid-glass rounded-[2rem] hover:text-blue-500 hover:scale-110 active:scale-95 transition-all shadow-xl"><Globe className="w-8 h-8" /></a>
                 <a href="#" className="p-7 liquid-glass rounded-[2rem] hover:text-blue-500 hover:scale-110 active:scale-95 transition-all shadow-xl"><Cpu className="w-8 h-8" /></a>
               </div>
@@ -307,7 +312,6 @@ const App: React.FC = () => {
           </div>
         </footer>
 
-        {/* Persistent Assistant only if not in secret mode */}
         {!isSecretOpen && <AIAssistant />}
       </div>
     </div>

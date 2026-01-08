@@ -3,6 +3,8 @@ import React from 'react';
 import { Project, Skill } from './types';
 import { Layout, Cpu, Dribbble, Code, Globe } from 'lucide-react';
 
+export const GITHUB_URL = "https://github.com/saimahanthchenagoni1-netizen";
+
 export const PROJECTS: Project[] = [
   {
     title: "Rise Beyond Limit",
@@ -87,11 +89,12 @@ export const TIMELINE: TimelineEntry[] = [
 export const INTERESTS = [
   { name: "Basketball", icon: <Dribbble className="w-6 h-6" />, desc: "Elite Performance & Teamwork" },
   { name: "Chess", icon: <Layout className="w-6 h-6" />, desc: "Algorithmic Strategy" },
-  { name: "AI Development", icon: <Cpu className="w-6 h-6" />, desc: "The Jarvis Evolution" },
+  { name: "AI Development", icon: <Cpu className="w-6 h-6" />, desc: "The Future of Intelligence" },
 ];
 
 export const SAI_BIO = `
 Name: Sai Mahanth Chenagoni
+GitHub: ${GITHUB_URL}
 Current School: Westwood High School (9th Grade)
 Personality: Ambitious, tech-focused, global citizen.
 Journey: Born in Hyderabad. Moved to USA in 2023. Visa finalized on his birthday.
